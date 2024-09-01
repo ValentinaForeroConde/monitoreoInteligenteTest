@@ -1,38 +1,39 @@
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode, useState, useEffect } from "react";
 import Draggable, { DraggableData, DraggableEvent } from "react-draggable";
 
 type PopUpsProviderProps = {
   children: ReactNode;
   id: string;
-  defaultPosition: {
-    top: number;
-    left: number;
-    width: number;
-    height: number;
-  };
+  initialPosition: { x: number; y: number };
   bringToFront: (id: string) => void;
-  updatePopupPosition: (id: string, position: { x: number; y: number }) => void;
+  handleDrag: (id: string, position: { x: number; y: number }) => void;
+  onStop: (id: string, position: { x: number; y: number }) => void;
 };
 
 export const PopupsProvider: React.FC<PopUpsProviderProps> = ({
   children,
   id,
-  defaultPosition,
+  initialPosition,
   bringToFront,
-  updatePopupPosition,
+  handleDrag,
+  onStop,
 }) => {
-  const [position, setPosition] = useState({
-    x: defaultPosition.left,
-    y: defaultPosition.top,
-  });
+  const [position, setPosition] = useState(initialPosition);
 
-  const handleDrag = (e: DraggableEvent, ui: DraggableData) => {
-    setPosition({ x: ui.x, y: ui.y });
+  useEffect(() => {
+    setPosition(initialPosition);
+  }, [initialPosition]);
+
+  const handleDragInternal = (e: DraggableEvent, ui: DraggableData) => {
+    const newPosition = { x: ui.x, y: ui.y };
+    setPosition(newPosition);
+    handleDrag(id, newPosition);
   };
 
-  const onStop = (e: DraggableEvent, ui: DraggableData) => {
-    setPosition({ x: ui.x, y: ui.y });
-    updatePopupPosition(id, { x: ui.x, y: ui.y });
+  const handleStopInternal = (e: DraggableEvent, ui: DraggableData) => {
+    const newPosition = { x: ui.x, y: ui.y };
+    setPosition(newPosition);
+    onStop(id, newPosition);
   };
 
   return (
@@ -41,8 +42,8 @@ export const PopupsProvider: React.FC<PopUpsProviderProps> = ({
       onStart={() => bringToFront(id)}
       bounds=".popUpsContainer"
       handle=".handle"
-      onDrag={handleDrag}
-      onStop={onStop}
+      onDrag={handleDragInternal}
+      onStop={handleStopInternal}
     >
       {children}
     </Draggable>

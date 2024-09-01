@@ -46,6 +46,20 @@ function App() {
     setActivePopup(id);
   };
 
+  const handleDrag = (id: string, position: { x: number; y: number }) => {
+    updatePopupPosition(id, {
+      left: position.x,
+      top: position.y,
+    });
+  };
+
+  const handleStop = (id: string, position: { x: number; y: number }) => {
+    updatePopupPosition(id, {
+      left: position.x,
+      top: position.y,
+    });
+  };
+
   return (
     <div className="h-screen flex flex-col">
       <header className="flex justify-between p-4 items-center bg-white shadow">
@@ -78,9 +92,13 @@ function App() {
                 <PopupsProvider
                   key={popup.id}
                   id={popup.id}
-                  defaultPosition={popup.defaultPosition}
+                  initialPosition={{
+                    x: popup.defaultPosition.left,
+                    y: popup.defaultPosition.top,
+                  }}
                   bringToFront={bringToFront}
-                  updatePopupPosition={updatePopupPosition}
+                  handleDrag={handleDrag}
+                  onStop={handleStop}
                 >
                   <div
                     id={popup.id}
