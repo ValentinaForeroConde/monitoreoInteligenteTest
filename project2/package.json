@@ -1,13 +1,11 @@
 {
   "name": "project2",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
-  "types": "./lib/esm/index.d.ts",
   "files": [
-    "lib",
-    "README.md"
+    "lib"
   ],
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -25,7 +23,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "yarn build:esm && yarn build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir lib/cjs",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
