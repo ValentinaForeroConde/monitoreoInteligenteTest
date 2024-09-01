@@ -26,4 +26,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'yarn'
-    - run: yarn --cwd project1 test:nowatch
+        
+    - name: Install dependencies
+      run: yarn install
+
+    - name: Run tests in project1
+      run: yarn --cwd project1 test:nowatch
