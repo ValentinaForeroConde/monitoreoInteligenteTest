@@ -20,10 +20,10 @@ function App() {
       id: number,
       title: `Popup: ${number} - Tipo: ${type}`,
       content: `Este es el contenido del Popup # ${number}, 
-      tiene un tamaño de "${width}px" X "${height}px" y tiene una
-      posición inicial de Top: ${top} y Left: ${left}, sin embargo 
-      puede arrastrarse por toda la pantalla, y conservará la posición
-      en la que se deje incluso si la ventana se recarga. Pruébalo!`,
+        tiene un tamaño de "${width}px" X "${height}px" y tiene una
+        posición inicial de Top: ${top} y Left: ${left}, sin embargo 
+        puede arrastrarse por toda la pantalla, y conservará la posición
+        en la que se deje incluso si la ventana se recarga. Pruébalo!`,
       defaultPosition: {
         left,
         top,
@@ -122,6 +122,7 @@ function App() {
                       <button
                         type="button"
                         onClick={() => onClickClosePopup(popup.id)}
+                        data-testid="close"
                       >
                         <CloseIcon />
                       </button>
