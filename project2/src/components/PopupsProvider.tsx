@@ -1,8 +1,8 @@
-import React, { ReactNode, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Draggable, { DraggableData, DraggableEvent } from "react-draggable";
 
 type PopUpsProviderProps = {
-  children: ReactNode;
+  children: React.ReactNode;
   id: string;
   initialPosition: { x: number; y: number };
   bringToFront: (id: string) => void;
