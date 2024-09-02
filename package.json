@@ -10,8 +10,8 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "yarn --cwd project2 build && yarn --cwd project1 build",
-    "start": "yarn --cwd project1 start"
+    "build": "yarn workspace project2 build && yarn workspace project1 build",
+    "start": "yarn workspace project1 start"
   },
   "author": "",
   "license": "ISC"
