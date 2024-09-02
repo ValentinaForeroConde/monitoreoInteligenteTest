@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { PopupType, usePopups } from "../src/hooks/usePopups";
 import { CloseIcon } from "../src/utils/CloseIcon";
-import { PopupsProvider } from "project2/lib/esm";
+import { PopupsProvider } from "project2";
 
 function App() {
   const { popups, addPopup, closePopup, closeAll, updatePopupPosition } =

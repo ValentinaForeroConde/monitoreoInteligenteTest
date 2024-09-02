@@ -12,7 +12,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "lib/esm",
+    "outDir": "lib",
   },
   "include": ["src"],
   "exclude": ["node_modules"]
