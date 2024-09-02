@@ -15,6 +15,7 @@ export type Popup = {
   };
   type: PopupType;
 };
+
 type Store = {
   popups: Popup[];
   addPopup: (newPopup: Popup) => void;
@@ -26,17 +27,21 @@ type Store = {
   ) => void;
 };
 
+const initialState = {
+  popups: [],
+};
+
 export const usePopups = create<Store>()(
   persist(
     (set) => ({
-      popups: [],
+      ...initialState,
       addPopup: (newPopup: Popup) =>
         set((state) => ({ popups: [...state.popups, newPopup] })),
       closePopup: (popupId: string) =>
         set((state) => ({
           popups: state.popups.filter((p: Popup) => p.id !== popupId),
         })),
-      closeAll: () => set(() => ({ popups: [] })),
+      closeAll: () => set(() => initialState),
       updatePopupPosition: (
         popupId: string,
         newPosition: Partial<Popup["defaultPosition"]>
