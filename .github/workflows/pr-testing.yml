@@ -30,5 +30,8 @@ jobs:
     - name: Install dependencies
       run: yarn install
 
+    - name: Build project2
+      run: yarn --cwd project2 build
+
     - name: Run tests in project1
       run: yarn --cwd project1 test:nowatch
