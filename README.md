@@ -90,8 +90,5 @@ For more details, see the [Project 2 README](/project2/README.md).
 - **Monorepo Structure**: Visual representation of the directory structure, highlighting the relationship between `project1` and `project2`.
 - **Getting Started**: Instructions for cloning the repository, installing dependencies, and running each project.
 - **Project-Specific Details**: Links to the respective README files for `project1` and `project2`.
-- **Deployment**: Basic instructions for deploying the projects, particularly using Vercel.
-- **Contributing**: Guidelines for contributing to the monorepo.
-- **License**: Licensing information for the monorepo.
 
 This README serves as the central documentation hub for the entire monorepo, directing users and contributors to the relevant project-specific information as needed.

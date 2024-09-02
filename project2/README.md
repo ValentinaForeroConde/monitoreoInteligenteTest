@@ -55,7 +55,7 @@ Ensure that all components are properly exported in the index.ts file located in
 
 ```bash 
    //index.tsx
-   import { PopupsProvider } from "./PopupsProvider";
+   import { MyComponent } from "./MyComponent";
 
-   export { PopupsProvider };
+   export { MyComponent };
 ```
