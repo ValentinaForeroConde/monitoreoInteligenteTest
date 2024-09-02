@@ -65,17 +65,25 @@ cd monitoreoInteligenteTest
 2. **Install dependencies**:
 
    `yarn install`
+   
    This will install all dependencies for both project1 and project2 as specified in their respective package.json files.
 
 ### Running Projects
 
 Each project can be run independently:
 
-**Running project1**:
-`yarn --cwd project1 start`
+**To run the project in the root**:
 
-**Running project2**:
-`yarn --cwd project2 start`
+`yarn start`
+
+**To run the project in project1**:
+
+```
+cd project1
+yarn start
+```
+
+Note: Project 2 does not need to be run, doing the build will be enough to see the changes from project2 in project1
 
 ## Project 1: Application
 
