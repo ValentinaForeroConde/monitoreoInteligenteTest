@@ -20,10 +20,6 @@ export const PopupsProvider: React.FC<PopUpsProviderProps> = ({
 }) => {
   const [position, setPosition] = useState(initialPosition);
 
-  useEffect(() => {
-    setPosition(initialPosition);
-  }, [initialPosition]);
-
   const handleDragInternal = (e: DraggableEvent, ui: DraggableData) => {
     const newPosition = { x: ui.x, y: ui.y };
     setPosition(newPosition);
@@ -35,6 +31,10 @@ export const PopupsProvider: React.FC<PopUpsProviderProps> = ({
     setPosition(newPosition);
     onStop(id, newPosition);
   };
+
+  useEffect(() => {
+    setPosition(initialPosition);
+  }, [initialPosition]);
 
   return (
     <Draggable
