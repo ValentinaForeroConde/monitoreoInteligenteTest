@@ -1,4 +1,5 @@
 # Monorepo: Application and Component Library
+
 ## Monitoreo Inteligente - Technical Assessment
 
 This monorepo was developed as part of a technical assessment for the Frontend Senior Developer role at Monitoreo Inteligente Company. It includes a React application and a reusable component library built with TypeScript, Zustand, and Tailwind CSS, showcasing the ability to manage and develop modular and maintainable code in a monorepo structure.
@@ -13,11 +14,11 @@ This monorepo contains two projects:
 - [Overview](#overview)
 - [Monorepo Structure](#monorepo-structure)
 - [Getting Started](#getting-started)
-  - [Installation](#installation)
-  - [Running Projects](#running-projects)
+   - [Installation](#installation)
+   - [Running Projects](#running-projects)
+
 - [Project 1: Application](#project-1-application)
 - [Project 2: Component Library](#project-2-component-library)
-
 
 ## Overview
 
@@ -30,7 +31,7 @@ The monorepo setup allows for shared dependencies and streamlined development ac
 
 ## Monorepo Structure
 
-```bash
+```bash {"id":"01J6SQYVCHZXAGF83GYTP7QC1J"}
 monorepo-root/
 ├── project1/
 │   ├── src/
@@ -40,7 +41,7 @@ monorepo-root/
 │
 ├── project2/
 │   ├── src/
-│   ├── dist/
+│   ├── lib/
 │   ├── package.json
 │   └── README.md
 │
@@ -55,34 +56,38 @@ monorepo-root/
 ### Installation
 
 1. **Clone the repository**:
-   ```bash
-   git clone git@github.com:ValentinaForeroConde/monitoreoInteligenteTest.git
-   cd monitoreoInteligenteTest
-    ```
+
+```bash {"id":"01J6SQYVCHZXAGF83GYW9KXGT9"}
+git clone git@github.com:ValentinaForeroConde/monitoreoInteligenteTest.git
+cd monitoreoInteligenteTest
+```
+
 2. **Install dependencies**:
 
-    `yarn install`
-    This will install all dependencies for both project1 and project2 as specified in their respective package.json files.
+   `yarn install`
+   This will install all dependencies for both project1 and project2 as specified in their respective package.json files.
 
 ### Running Projects
+
 Each project can be run independently:
 
-  **Running project1**:
-    `yarn --cwd project1 start`
+**Running project1**:
+`yarn --cwd project1 start`
 
-  **Running project2**:
-    `yarn --cwd project2 start`
+**Running project2**:
+`yarn --cwd project2 start`
 
 ## Project 1: Application
+
 Project 1 is the main application within this monorepo. It uses components from Project 2 to build its UI.
 
 For more details, see the [Project 1 README](/project1/README.md).
 
 ## Project 2: Component Library
+
 Project 2 is a React component library that provides reusable UI components for Project 1.
 
 For more details, see the [Project 2 README](/project2/README.md).
-
 
 ### Summary of the Root README
 
