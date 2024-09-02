@@ -15,7 +15,6 @@ export type Popup = {
   };
   type: PopupType;
 };
-
 type Store = {
   popups: Popup[];
   addPopup: (newPopup: Popup) => void;
