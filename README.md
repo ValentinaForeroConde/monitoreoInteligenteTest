@@ -1,4 +1,7 @@
 # Monorepo: Application and Component Library
+## Monitoreo Inteligente - Technical Assessment
+
+This monorepo was developed as part of a technical assessment for the Frontend Senior Developer role at Monitoreo Inteligente Company. It includes a React application and a reusable component library built with TypeScript, Zustand, and Tailwind CSS, showcasing the ability to manage and develop modular and maintainable code in a monorepo structure.
 
 This monorepo contains two projects:
 
